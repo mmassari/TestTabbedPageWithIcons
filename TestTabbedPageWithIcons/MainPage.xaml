@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:TestTabbedPageWithIcons"
+            x:Class="TestTabbedPageWithIcons.MainPage">
+
+    <!--This is ok but i have to provide a real image-->
+    <NavigationPage Title="Home" IconImageSource="icon.png">
+        <x:Arguments>
+            <local:Page1 />
+        </x:Arguments>
+    </NavigationPage>
+
+    <!--This tab have a fontawesome image but I can't provide a navigation page-->
+    <NavigationPage Title="Schedule">
+        <NavigationPage.IconImageSource>
+            <FontImageSource FontFamily="FARegular" Size="Large" Glyph="\uf015" />
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+
+    <!--The mix of icon from fontawesome and navigation page doesn't work at all -->
+    <NavigationPage Title="Schedule">
+        <NavigationPage.IconImageSource>
+            <FontImageSource FontFamily="FARegular" Size="Large" Glyph="\uf015" />
+        </NavigationPage.IconImageSource>
+        <x:Arguments>
+            <local:Page2 />
+        </x:Arguments>
+    </NavigationPage>
+
+    <!--The problem is not so much IconImageSource but the NavigationPage tag 
+    that does not allow you to specify the page in an attribute but only in the constructor.
+    In fact, if I need to specify a value that needs a nested tag, 
+    I no longer have the ability to specify the navigation page -->
+    <NavigationPage Title="Schedule">
+        <NavigationPage.ToolbarItems>
+            <ToolbarItem Text="Back" Command="BackCommand" />
+            <ToolbarItem Text="Cart" Command="CartCommand" />
+        </NavigationPage.ToolbarItems>
+        <x:Arguments>
+            <local:Page2 />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>
