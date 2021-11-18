@@ -14,14 +14,14 @@
     <!--This tab have a fontawesome image but I can't provide a navigation page-->
     <NavigationPage Title="Schedule">
         <NavigationPage.IconImageSource>
-            <FontImageSource FontFamily="FARegular" Size="Large" Glyph="\uf015" />
+            <FontImageSource FontFamily="FARegular" Size="Large" Glyph="&#xf164;" />
         </NavigationPage.IconImageSource>
     </NavigationPage>
 
     <!--The mix of icon from fontawesome and navigation page doesn't work at all -->
     <NavigationPage Title="Schedule">
         <NavigationPage.IconImageSource>
-            <FontImageSource FontFamily="FARegular" Size="Large" Glyph="\uf015" />
+            <FontImageSource FontFamily="FARegular" Size="Large" Glyph="&#xf164;" />
         </NavigationPage.IconImageSource>
         <x:Arguments>
             <local:Page2 />
